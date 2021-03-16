@@ -1,0 +1,37 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+
+<div class="container">
+<h3>Your Blog Page</h3>
+<small>Welcome {{session["username"]}}</small>
+<hr>
+{% from "includes/formhelpers.html" import render_field %}
+<form  method = "post">
+    {{ render_field(form.title,class = "form-control"  ) }}
+    {{ render_field(form.content,class = "form-control" ) }}
+   
+ <button type="submit" class="btn btn-success" >Add Text</button>
+</form>
+<hr>
+<h4>Your Contents</h4>
+<hr>
+
+{% if articles %}
+
+<div class="card">
+  {% for article in articles %}
+ 
+  <div class="card-body">
+    <h5 class="card-title">{{article.title}}</h5>
+    <p class="card-text">{{article.content}}</p>
+    <p class="card-text">{{article.created_date}}</p>
+    <a href="/edit/{{article.id}}" class="btn btn-success">Update</a>
+    <a href="/delete/{{article.id}}" class="btn btn-success">Delete</a>
+    
+  </div>
+  {% endfor %}
+</div>
+{% endif %}
+</div>
+{% endblock body %}

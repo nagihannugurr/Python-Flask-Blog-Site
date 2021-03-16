@@ -1,0 +1,71 @@
+
+<nav style="border-bottom: 2px solid #fff;opacity: 0.8;" class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top">
+<div class="container">
+    <a class="navbar-brand" href="/">
+     <i class="bi bi-file-earmark-code"><svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-file-earmark-code" viewBox="0 0 16 16">
+  <path d="M14 4.5V14a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2h5.5L14 4.5zm-3 0A1.5 1.5 0 0 1 9.5 3V1H4a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V4.5h-2z"/>
+  <path d="M8.646 6.646a.5.5 0 0 1 .708 0l2 2a.5.5 0 0 1 0 .708l-2 2a.5.5 0 0 1-.708-.708L10.293 9 8.646 7.354a.5.5 0 0 1 0-.708zm-1.292 0a.5.5 0 0 0-.708 0l-2 2a.5.5 0 0 0 0 .708l2 2a.5.5 0 0 0 .708-.708L5.707 9l1.647-1.646a.5.5 0 0 0 0-.708z"/>
+</svg></i>&nbsp; 
+    </a>
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-targer="#collapsibleNavbar">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="collapsibleNavbar">
+
+        <ul  class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link"  href="/home">Home </a>
+            </li>
+            <li class="nav-item active " >
+                <a class="nav-link"   href="/blog">Blog</a>
+            </li>
+            <li  class="nav-item active" >
+                <a class="nav-link"   href="/about">About</a>
+            </li>
+
+        </ul>
+        
+        <ul class="navbar-nav ml-auto font-weight-bold">
+
+
+        {% if session["logged_in"] %}
+         <li  class="nav-item active " >
+            <a class="nav-link " href="/logout"> Log Out </a>
+        </li>
+        
+        {% else %}
+        <li  class="nav-item active " >
+            <a class="nav-link"  href="/login"> Log In </a>
+        </li>
+        <li  class="nav-item active disabled ">
+            <a class="nav-link "  href="/register"> Sign In </a>
+        </li>
+
+        {% endif %}
+       
+
+    </div>
+    </div>
+</nav>
+
+<header>
+    <div style=" padding-top: 100px;" class="jumbotron bg-dark text-white">
+        <div class="container">
+         <div class="col-md-6 px-0">
+          <h1 class="display-4 font-italic">
+          Welcome to Who Coded Blog...
+          </h1>
+         
+          <p class="lead my-3">
+           I know that you are here because you are interested in our world that software!
+           You can sign in and write your blog post things you are interested in...
+          </p>
+
+        
+        </div>
+         <img src="https://images.unsplash.com/photo-1497032628192-86f99bcd76bc?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80" class="card-img" alt="...">
+        </div>
+    </div>
+
+</header>
